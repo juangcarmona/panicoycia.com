@@ -27,8 +27,8 @@ The instructions file SHALL explicitly prohibit: Tailwind, backend (unless reque
 - **THEN** `project.md` context is available to guide artifact creation
 
 ### Requirement: Project.md prohibits asset copying
-`openspec/project.md` SHALL explicitly state that https://2mtg.es/ is structural/UX inspiration only and that copying text, assets, logos, photos, videos, code, CSS, or branding from that site is prohibited.
+`openspec/project.md` SHALL explicitly state that copying text, assets, logos, photos, videos, code, CSS, or branding from any third-party site is prohibited.
 
 #### Scenario: Agent avoids copying
-- **WHEN** an agent references 2mtg.es during implementation
-- **THEN** it uses only structural/layout ideas, never literal content or assets
+- **WHEN** an agent produces code or content during implementation
+- **THEN** it does not reproduce or adapt copyrighted assets or text from any external source

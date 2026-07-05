@@ -6,7 +6,6 @@ context: |
   Hosting: Azure Static Web Apps via GitHub Actions (branch: main).
   Content: centralized in src/web/src/content/site.ts — never hard-coded in components.
   No Tailwind, no CMS, no database, no backend (Azure Function for contact form only if requested).
-  Inspiration: https://2mtg.es/ — structural/UX reference only. Zero copying of assets, text, or code.
   Placeholder policy: use placeholder strings and /images/placeholder-*.jpg until official assets provided.
   Always check openspec/project.md for full project context before creating artifacts.
 

@@ -1,0 +1,73 @@
+---
+import { members } from "../content/site";
+---
+
+<section id="members" class="section" data-reveal>
+  <div class="container">
+    <p class="eyebrow">{members.eyebrow}</p>
+    <h2 class="section-title">{members.title}</h2>
+
+    <div class="members__grid">
+      {members.members.map((member) => (
+        <article class="members__card card" data-reveal>
+          <img
+            src={member.image}
+            alt={`${member.name} — ${member.role}`}
+            class="members__photo"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="members__info">
+            <h3 class="members__name">{member.name}</h3>
+            <p class="members__role">{member.role}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .members__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .members__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .members__card {
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .members__photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .members__info {
+    padding: 1rem;
+  }
+
+  .members__name {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .members__role {
+    margin: 0.25rem 0 0;
+    color: var(--color-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+</style>

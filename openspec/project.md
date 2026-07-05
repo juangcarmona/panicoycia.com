@@ -38,21 +38,6 @@ openspec/      Source of truth for planned and accepted changes
 - Components import from there — never hard-code content in `.astro` or `.ts` component files.
 - Use placeholder strings and placeholder image paths until official assets are provided by the band.
 
-## Inspiration Source — Hard Constraint
-
-**https://2mtg.es/ is structural and UX inspiration only.**
-
-It is explicitly PROHIBITED to copy, reproduce, adapt, or derive any of the following from that site:
-- Text or copy of any kind
-- CSS rules or styling
-- JavaScript or any code
-- Images, photos, or graphics
-- Logos or branding elements
-- Videos or audio
-- Any other copyrighted asset
-
-When referencing 2mtg.es, use only its information architecture (section order, navigation patterns) as a loose guide. Never lift content.
-
 ## Asset Policy
 
 Until the band provides official assets, use:

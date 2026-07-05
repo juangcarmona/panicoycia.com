@@ -15,7 +15,7 @@ Official website for **Pánico & Cía**, a Madrid-based pop-rock band performing
 ```
 .github/
   copilot-instructions.md   Guidance for Copilot agents
-  workflows/                GitHub Actions (added with Astro scaffold)
+  workflows/deploy.yml      Azure SWA deploy workflow
 docs/
   product/
     website-brief.md        Purpose, audience, sections, content model
@@ -27,7 +27,9 @@ openspec/
   specs/                    Accepted capability specs
   changes/                  Planned and in-progress changes
 src/
-  web/                      Astro static website (to be scaffolded)
+  web/                      Astro static website
+    public/
+      staticwebapp.config.json  Azure SWA routing & security headers
   api/                      Reserved: future Azure Function
 README.md
 .gitignore
@@ -35,19 +37,36 @@ README.md
 
 ## Local Development
 
-> The Astro app has not been scaffolded yet. Once scaffolded under `src/web/`:
-
 ```bash
 cd src/web
 npm install
 npm run dev       # dev server at http://localhost:4321
 npm run build     # production build → dist/
 npm run preview   # preview production build
+npm run check     # TypeScript type checking
 ```
+
+## Editing Content
+
+All site content lives in a single file:
+
+```
+src/web/src/content/site.ts
+```
+
+Edit this file to update text, shows, members, gallery, videos, repertoire, or contact info. Components read from this file — never hard-code content in `.astro` files.
 
 ## Deployment
 
 Deployed to **Azure Static Web Apps** on push to `main` via GitHub Actions.
+
+- Workflow: `.github/workflows/deploy.yml`
+- Secret required: `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- App location: `src/web`
+- Output: `dist`
+- Staging environments auto-created on pull requests
+
+### Domains
 
 - Canonical domain: `panicoycia.es`
 - Defensive domain: `panicoycia.com`

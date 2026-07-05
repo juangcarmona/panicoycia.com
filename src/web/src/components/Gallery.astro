@@ -1,0 +1,51 @@
+---
+import { gallery } from "../content/site";
+---
+
+<section id="gallery" class="section" data-reveal>
+  <div class="container">
+    <p class="eyebrow">{gallery.eyebrow}</p>
+    <h2 class="section-title">{gallery.title}</h2>
+
+    <div class="gallery__grid">
+      {gallery.images.map((image) => (
+        <figure class="gallery__item" data-reveal>
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="gallery__image"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .gallery__item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--color-border);
+  }
+
+  .gallery__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 300ms ease;
+  }
+
+  .gallery__image:hover {
+    transform: scale(1.03);
+  }
+</style>

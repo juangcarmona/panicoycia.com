@@ -84,7 +84,6 @@ Bootstrap (run once): `npm create astro@latest src/web -- --template minimal --t
 - No Tailwind or CSS utility frameworks
 - No unnecessary npm dependencies
 - Do not break `output: 'static'` in `astro.config.mjs`
-- Do not copy text, CSS, code, images, logos, or any asset from https://2mtg.es/ (structural/UX inspiration only)
 - Do not source images from the internet without band approval — use `/images/placeholder-*.jpg`
 
 ---
@@ -94,6 +93,6 @@ Bootstrap (run once): `npm create astro@latest src/web -- --template minimal --t
 - Build artefact: `src/web/dist/`  
 - App location: `src/web` · Output location: `dist` · API location: _(empty)_  
 - Deploy secret: `AZURE_STATIC_WEB_APPS_API_TOKEN`  
-- Routing config: `staticwebapp.config.json` at repo root  
+- Routing config: `src/web/public/staticwebapp.config.json` (copied to `dist/` on build)  
 - After routing changes: build and preview locally before pushing
 

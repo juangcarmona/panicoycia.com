@@ -1,0 +1,71 @@
+---
+import { repertoire } from "../content/site";
+---
+
+<section id="repertoire" class="section" data-reveal>
+  <div class="container">
+    <p class="eyebrow">{repertoire.eyebrow}</p>
+    <h2 class="section-title">{repertoire.title}</h2>
+
+    <div class="repertoire__groups">
+      {repertoire.groups.map((group) => (
+        <div class="repertoire__group" data-reveal>
+          <h3 class="repertoire__category">{group.category}</h3>
+          <ul class="repertoire__songs">
+            {group.songs.map((song) => (
+              <li class="repertoire__song">
+                <span class="repertoire__song-title">{song.title}</span>
+                <span class="repertoire__song-artist">{song.artist}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .repertoire__groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .repertoire__category {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-red);
+  }
+
+  .repertoire__songs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .repertoire__song {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  }
+
+  .repertoire__song-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .repertoire__song-artist {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    text-align: right;
+    flex-shrink: 0;
+  }
+</style>

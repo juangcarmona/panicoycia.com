@@ -1,0 +1,81 @@
+---
+import { hero } from "../content/site";
+---
+
+<section id="hero" class="hero">
+  <div class="hero__content container">
+    <p class="hero__kicker">En concierto</p>
+    <h1 class="hero__headline">PÁNICO <span class="hero__amp">&</span> CÍA</h1>
+    <p class="hero__subtitle">Versiones Pop-Rock</p>
+    <p class="hero__tagline">{hero.tagline}</p>
+    <a href={hero.ctaHref} class="button">{hero.ctaText}</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 6rem 1.25rem 4rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 70%, rgb(255 48 69 / 0.14), transparent 55%);
+    pointer-events: none;
+  }
+
+  .hero__content {
+    position: relative;
+  }
+
+  .hero__kicker {
+    font-family: var(--font-accent);
+    color: var(--color-red);
+    font-size: clamp(1.4rem, 4vw, 3rem);
+    margin: 0 0 1rem;
+    transform: rotate(-2deg);
+  }
+
+  .hero__headline {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 16vw, 13rem);
+    line-height: 0.82;
+    letter-spacing: 0.02em;
+    text-shadow:
+      3px 3px 0 var(--color-red-dark),
+      8px 8px 24px rgb(0 0 0 / 0.7);
+  }
+
+  .hero__amp {
+    color: var(--color-red);
+  }
+
+  .hero__subtitle {
+    margin: 1rem 0 0.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  .hero__tagline {
+    margin: 0.5rem 0 2.5rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: var(--color-muted);
+    max-width: 42ch;
+    margin-inline: auto;
+    line-height: 1.5;
+  }
+</style>

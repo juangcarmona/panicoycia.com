@@ -37,7 +37,7 @@ Until the band provides official assets:
 - Use placeholder text strings: `"[Band member name]"`, `"[Instrument]"`, `"[Show venue and date TBC]"`.
 - Use placeholder images at `/images/placeholder-hero.jpg`, `/images/placeholder-member.jpg`, `/images/placeholder-gallery-01.jpg`, etc.
 - Do **not** use images sourced from the internet, stock libraries, or third-party sites without explicit band approval.
-- Do **not** copy, reproduce, or adapt any content from https://2mtg.es/ or any other band's website.
+- Do **not** copy, reproduce, or adapt any content from other band websites.
 
 ## Out of Scope (v1)
 
