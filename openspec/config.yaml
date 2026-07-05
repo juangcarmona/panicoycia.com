@@ -1,0 +1,19 @@
+schema: spec-driven
+
+context: |
+  Project: panicoycia.com — official website for Pánico & Cía, a Madrid-based pop-rock band.
+  Stack: Astro (static output), TypeScript (strict), plain CSS with custom properties.
+  Hosting: Azure Static Web Apps via GitHub Actions (branch: main).
+  Content: centralized in src/web/src/content/site.ts — never hard-coded in components.
+  No Tailwind, no CMS, no database, no backend (Azure Function for contact form only if requested).
+  Inspiration: https://2mtg.es/ — structural/UX reference only. Zero copying of assets, text, or code.
+  Placeholder policy: use placeholder strings and /images/placeholder-*.jpg until official assets provided.
+  Always check openspec/project.md for full project context before creating artifacts.
+
+rules:
+  proposal:
+    - Keep proposals under 400 words
+    - Always include a Non-goals section in design.md
+  tasks:
+    - Each task must be completable in one agent session
+    - Tasks that create files must name the exact file path
